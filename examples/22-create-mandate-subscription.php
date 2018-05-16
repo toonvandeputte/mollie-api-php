@@ -26,7 +26,10 @@ try {
     echo "<p>Mandate created with id " . $mandate->id . "</p>";
 
     $subscription = $customer->createSubscription(array(
-        "amount" => 10.00,
+        "amount" => array(
+        	"value" => "10.00",
+        	"currency" => "EUR"
+        ),
         "times" => 12, // recurring membership for 1 year
         "interval" => "1 months", // every month
         "description" => "Subscription 12345",
